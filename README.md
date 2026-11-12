@@ -210,7 +210,7 @@ All Python dependencies are managed via `requirements.txt`:
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/ADBasher.git
+git clone https://github.com/cybr-ad/ADBasher.git
 cd ADBasher
 
 # Run automated installer
@@ -224,7 +224,7 @@ sudo ./install.sh
 
 ```bash
 # Clone repository
-git clone --recurse-submodules https://github.com/yourusername/ADBasher.git
+git clone --recurse-submodules https://github.com/cybr-ad/ADBasher.git
 cd ADBasher
 
 # Install system dependencies
@@ -470,7 +470,7 @@ We welcome contributions! Please follow these guidelines:
 
 ```bash
 # Fork and clone
-git clone https://github.com/yourusername/ADBasher.git
+git clone https://github.com/cybr-ad/ADBasher.git
 cd ADBasher
 
 # Create feature branch
@@ -639,7 +639,7 @@ global:
 | [TESTING.md](docs/TESTING.md)                                            | Lab setup, test procedures, validation    |
 | [PERFORMANCE.md](docs/PERFORMANCE.md)                                    | Optimization guide, profiling, benchmarks |
 | [VALIDATION_REPORT.md](docs/VALIDATION_REPORT.md)                        | Test results, coverage metrics            |
-| [Walkthrough](https://github.com/yourusername/ADBasher/wiki/Walkthrough) | Step-by-step execution example            |
+| [Walkthrough](https://github.com/cybr-ad/ADBasher/wiki/Walkthrough) | Step-by-step execution example            |
 
 ### External Resources
 
@@ -712,8 +712,8 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ## 📞 Contact & Support
 
-- **GitHub Issues**: [Report bugs or request features](https://github.com/yourusername/ADBasher/issues)
-- **Discussions**: [Ask questions](https://github.com/yourusername/ADBasher/discussions)
+- **GitHub Issues**: [Report bugs or request features](https://github.com/cybr-ad/ADBasher/issues)
+- **Discussions**: [Ask questions](https://github.com/cybr-ad/ADBasher/discussions)
 - **Email**: <security@example.com> (for security disclosures)
 
 ---
