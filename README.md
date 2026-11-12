@@ -223,22 +223,31 @@ sudo ./install.sh
 ### Method 2: Manual Installation
 
 ```bash
-# Clone repository
-git clone --recurse-submodules https://github.com/cybr-ad/ADBasher.git
+# 1. Install system build dependencies (cmake is required for unicorn)
+sudo apt update
+sudo apt install -y cmake build-essential ninja-build pkg-config python3-dev \
+    python3-pip python3-venv crackmapexec impacket-scripts
+
+# 2. Clone the repository (without --recurse-submodules first)
+git clone https://github.com/cybr-ad/ADBasher.git
 cd ADBasher
 
-# Install system dependencies
-sudo apt update
-sudo apt install -y python3-pip crackmapexec impacket-scripts
+# 3. Fix submodules by fetching their latest commits (avoids missing ref errors)
+git submodule update --init --recursive --remote
 
-# Install Python dependencies
-pip3 install -r requirements.txt
+# 4. Create and activate a Python virtual environment
+python3 -m venv ad-basher
+source ad-basher/bin/activate
 
-# Make executable
+# 5. Upgrade pip and install all Python dependencies inside the venv
+pip install --upgrade pip
+pip install -r requirements.txt
+
+# 6. Make the main script and phase directories executable
 chmod +x adbasher.py
 chmod +x -R "1 nocreds/" "3 nopass/" "6 validcreds/" "7 privesc/" "8 persistence/"
 
-# Test installation
+# 7. Verify that the core modules import correctly
 python3 -c "from core import database, logger, orchestrator; print('✓ Core modules OK')"
 ```
 
