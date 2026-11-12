@@ -209,12 +209,28 @@ All Python dependencies are managed via `requirements.txt`:
 ### Method 1: Automated Installation (Recommended)
 
 ```bash
-# Clone repository
+# Clone repository (without submodules to avoid missing refs)
 git clone https://github.com/cybr-ad/ADBasher.git
 cd ADBasher
 
-# Run automated installer
-sudo ./install.sh
+# Install system build dependencies (cmake is required for unicorn)
+sudo apt update
+sudo apt install -y cmake build-essential ninja-build pkg-config python3-dev \
+    python3-pip python3-venv crackmapexec impacket-scripts
+
+# Fetch submodules with the latest available commits
+git submodule update --init --recursive --remote
+
+# Create and activate a Python virtual environment
+python3 -m venv ad-basher
+source ad-basher/bin/activate
+
+# Upgrade pip inside the venv
+pip install --upgrade pip
+
+# Run the automated installer (now executes inside the venv)
+chmod +x install.sh
+./install.sh
 
 # Verify installation
 ./adbasher.py --help
